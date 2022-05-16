@@ -1,5 +1,4 @@
 import { pageTest } from '../tests_modules/mainPage';
-import {searchForProducts_Negative} from "../tests_modules/mainPage";
 import {searchForProducts_Positive} from "../tests_modules/mainPage";
 
 

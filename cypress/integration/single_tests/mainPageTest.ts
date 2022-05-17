@@ -2,8 +2,7 @@
 import { pageTest } from '../../tests_modules/mainPage';
 import {searchForProducts_Positive } from '../../tests_modules/mainPage';
 import {searchForProducts_Negative} from '../../tests_modules/mainPage';
-
-
+import {BarItemsTests} from "../../tests_modules/mainPage";
 
 
 describe('End to End test -search for non-existing product', () => {
@@ -38,4 +37,24 @@ describe('End to End test -search for non-existing product', () => {
 
 
   });
+
+describe('Test Bar Items', () => {
+  before(() => {
+    cy.viewport(1920, 1080);
+  });
+
+  beforeEach(() => {
+    //pageTest();
+    //cy.visit('https://atid.store/')
+
+  });
+  BarItemsTests('Men');
+  BarItemsTests('Accessories');
+  BarItemsTests('BlaBla');//this test will fail
+
+
+});
+
+
+
 

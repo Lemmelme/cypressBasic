@@ -43,6 +43,26 @@ const searchForProducts_Positive= (lookup:string,message:string,productsAmount:n
 };
 
 
+const BarItemsTests =(menuItem:string):void=>{
+    it('Click on a category in the Bar', () =>{
+        main.load();
+        cy.url().should('equal', main.baseURL);
+        main.Bar.contains(menuItem).click()
+
+    it('verify that correct items exist')
+        main.ProductSection.should("exist").then(($childNum) => {
+            const amount = $childNum.children().length;
+            for (let i=1;i<amount;i++)
+            {
+                main.ShopSummary(i).should('exist').should('contain.text',menuItem);
+            }
+        })
+
+    });
+
+    }
+
+export {BarItemsTests};
 export { pageTest };
 export {searchForProducts_Negative};
 export {searchForProducts_Positive};

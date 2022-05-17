@@ -8,7 +8,7 @@ class MainPage extends basePage {
     shopUrl: string;
     productSection: string;
     productTitle: string;
-    productTitleText: string;
+    shopSummary: string
 
 
     constructor() {
@@ -19,6 +19,8 @@ class MainPage extends basePage {
         this.shopUrl = 'https://atid.store/store/'
         this.productSection = '.ast-woocommerce-container> .products';
         this.productTitle = '.product_title';
+        this.shopSummary = 'astra-shop-summary-wrap> .ast-woo-product-category';
+
 
 
     }
@@ -43,10 +45,17 @@ class MainPage extends basePage {
         return cy.get(this.productSection)
     }
 
+    ShopSummary(i:number) {
+        return cy.get('.ast-woocommerce-container> .products >:nth-child('+i+') > .astra-shop-summary-wrap> .ast-woo-product-category');
+
+    }
+
     ClickOnProduct(i: number) {
      return cy.get('.ast-woocommerce-container> .products > .ast-article-post:nth-child(' + i + ')');
 
     }
+
+
 
 
 }

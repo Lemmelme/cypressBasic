@@ -43,8 +43,8 @@ class MainPage extends basePage {
         return cy.get(this.productSection)
     }
 
-    ClickOnProduct(i: number): void {
-        cy.get('.ast-woocommerce-container> .products > .ast-article-post:nth-child(' + i + ')').click();
+    ClickOnProduct(i: number) {
+     return cy.get('.ast-woocommerce-container> .products > .ast-article-post:nth-child(' + i + ')');
 
     }
 

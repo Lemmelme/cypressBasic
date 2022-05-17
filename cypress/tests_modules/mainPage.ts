@@ -37,7 +37,7 @@ const searchForProducts_Positive= (lookup:string,message:string,productsAmount:n
         main.ResultMessage.should('contain.text',`${message}`);
         main.ProductSection.should('exist').children().should('have.length',`${productsAmount}`);
         //cy.get('.ast-woocommerce-container> .products > .ast-article-post:nth-child(2)').click();
-        main.ClickOnProduct(i);
+        main.ClickOnProduct(i).click();
         cy.url().should('contain',`${lookup}`.toLowerCase());
     });
 };
